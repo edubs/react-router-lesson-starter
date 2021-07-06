@@ -12,17 +12,13 @@ export default function Categories () {
     <main>
       <h1>Categories</h1>
       <ul>
-        { 
-          Object.keys(categories).map(category => {
-            return (
-              <li>
-                <Link to={`${url}/${category}`}>{category}</Link>
-              </li>
-            )
-          })
-        }
+        { Object.keys(categories).map(category => (
+          <li key={category}>
+            <Link to={`${url}/${category}`}>{category}</Link>
+          </li>
+        ))}
       </ul>
-      <Route path={`/${path}/:name`}>
+      <Route path={`${path}/:name`}>
         <Category />
       </Route>
     </main>

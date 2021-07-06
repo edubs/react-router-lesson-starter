@@ -11,22 +11,25 @@ import Profile from "../components/Profile";
 import { BrowserRouter as Router, Route, Link, NavLink, Switch } from 'react-router-dom';
 import "./App.css";
 
+
 function App() {
   return (
     <Router>
       <Header />
       <main>
         <Switch>
+          <Route path='/articles/:title'>
+            <Article />
+          </Route>
+          <Route path='/authors/:name'>
+            <Author />
+          </Route>
           <Route path='/about'>
             <About />
           </Route>
 
           <Route path='/sign-up'>
             <SignUp />
-          </Route>
-          
-          <Route path='/articles/:title'>
-            <Article />
           </Route>
 
           <Route path='/articles'>
@@ -41,9 +44,7 @@ function App() {
             <Profile />
           </Route>
 
-          <Route path='/authors/:name'>
-            <Author />
-          </Route>
+
         </Switch>
       </main>
       <Footer />
